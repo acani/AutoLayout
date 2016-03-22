@@ -10,7 +10,6 @@
 		D2D6AC711CA0927300FA450A /* AutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D6AC661CA0927200FA450A /* AutoLayout.framework */; };
 		D2D6AC761CA0927300FA450A /* AutoLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D6AC751CA0927300FA450A /* AutoLayoutTests.swift */; };
 		D2D6AC811CA0929900FA450A /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D6AC801CA0929900FA450A /* AutoLayout.swift */; };
-		D2D6AC941CA0BE3B00FA450A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D2D6AC931CA0BE3B00FA450A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,7 +195,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D6AC941CA0BE3B00FA450A /* README.md in Sources */,
 				D2D6AC811CA0929900FA450A /* AutoLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +381,7 @@
 				D2D6AC7C1CA0927300FA450A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2D6AC7D1CA0927300FA450A /* Build configuration list for PBXNativeTarget "AutoLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -391,6 +390,7 @@
 				D2D6AC7F1CA0927300FA450A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
