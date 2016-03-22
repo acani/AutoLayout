@@ -17,7 +17,7 @@ Usage:
     Make the tops of `view1` & `view2` equal
 
     ```swift
-    let constraint = NSLayoutConstraint(item: view1, toItem: view2, attribute: .Top)
+    let constraint = NSLayoutConstraint(item: view1, attribute: .Top, item: view2)
     ```
 
 * Create constraints for a subview with insets

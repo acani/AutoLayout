@@ -12,29 +12,29 @@ class AutoLayoutTests: XCTestCase {
         constraint = NSLayoutConstraint(item: view1, attribute: .Width, constant: 10)
         constraint.assert(item: view1, attribute: .Width, constant: 10)
 
-        constraint = NSLayoutConstraint(item: view1, attribute: .Height, relatedBy: .GreaterThanOrEqual, constant: 10)
-        constraint.assert(item: view1, attribute: .Height, relatedBy: .GreaterThanOrEqual, constant: 10)
+        constraint = NSLayoutConstraint(item: view1, attribute: .Height, relation: .GreaterThanOrEqual, constant: 10)
+        constraint.assert(item: view1, attribute: .Height, relation: .GreaterThanOrEqual, constant: 10)
 
-        constraint = NSLayoutConstraint(item: view1, toItem: view2, attribute: .Top)
-        constraint.assert(item: view1, toItem: view2, attribute: .Top)
+        constraint = NSLayoutConstraint(item: view1, attribute: .Top, item: view2)
+        constraint.assert(item: view1, attribute: .Top, item: view2)
 
-        constraint = NSLayoutConstraint(item: view1, toItem: view2, attribute: .Bottom, constant: 10)
-        constraint.assert(item: view1, toItem: view2, attribute: .Bottom, constant: 10)
+        constraint = NSLayoutConstraint(item: view1, attribute: .Bottom, item: view2, constant: 10)
+        constraint.assert(item: view1, attribute: .Bottom, item: view2, constant: 10)
 
-        constraint = NSLayoutConstraint(item: view1, toItem: view2, attribute: .Top, relatedBy: .Equal, attribute: .CenterY, multiplier: 2, constant: 10)
-        constraint.assert(item: view1, toItem: view2, attribute: .Top, relatedBy: .Equal, attribute: .CenterY, multiplier: 2, constant: 10)
+        constraint = NSLayoutConstraint(item: view1, attribute: .Top, relation: .Equal, item: view2, attribute: .CenterY, multiplier: 2, constant: 10)
+        constraint.assert(item: view1, attribute: .Top, relation: .Equal, item: view2, attribute: .CenterY, multiplier: 2, constant: 10)
     }
 }
 
 extension NSLayoutConstraint {
-    func assert(item view1: AnyObject, toItem view2: AnyObject? = nil, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation = .Equal, attribute attr2: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, constant c: CGFloat = 0) {
-        let attribute2: NSLayoutAttribute = view2 == nil ? .NotAnAttribute : (attr2 ?? attr1)
-        XCTAssertTrue(firstItem === view1)
-        XCTAssertEqual(firstAttribute, attr1)
+    func assert(item item1: AnyObject, attribute attribute1: NSLayoutAttribute, relation: NSLayoutRelation = .Equal, item item2: AnyObject? = nil, attribute attribute2: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, constant constant: CGFloat = 0) {
+        let attribute2: NSLayoutAttribute = item2 == nil ? .NotAnAttribute : (attribute2 ?? attribute1)
+        XCTAssertTrue(firstItem === item1)
+        XCTAssertEqual(firstAttribute, attribute1)
         XCTAssertEqual(self.relation, relation)
-        XCTAssertTrue(secondItem === view2)
+        XCTAssertTrue(secondItem === item2)
         XCTAssertEqual(secondAttribute, attribute2)
         XCTAssertEqual(self.multiplier, multiplier)
-        XCTAssertEqual(constant, c)
+        XCTAssertEqual(self.constant, constant)
     }
 }
