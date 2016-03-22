@@ -9,7 +9,7 @@ extension NSLayoutConstraint {
     public class func constraintsWithSuperview(superview: UIView, subview: UIView, insets: UIEdgeInsets, localized: Bool = true) -> [NSLayoutConstraint] {
         return [
             NSLayoutConstraint(item: superview, attribute: .Top, item: subview, constant: insets.top),
-            NSLayoutConstraint(item: superview, attribute: (localized ? .Leading : .Left), item: subview, constant: insets.left),
+            NSLayoutConstraint(item: superview, attribute: (localized ? .Leading : .Left), item: subview, constant: -insets.left),
             NSLayoutConstraint(item: superview, attribute: .Bottom, item: subview, constant: insets.bottom),
             NSLayoutConstraint(item: superview, attribute: (localized ? .Trailing : .Right), item: subview, constant: insets.right)
         ]
