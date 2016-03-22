@@ -29,10 +29,10 @@ class AutoLayoutTests: XCTestCase {
 extension NSLayoutConstraint {
     func assert(item view1: AnyObject, toItem view2: AnyObject? = nil, attribute attr1: NSLayoutAttribute, relatedBy relation: NSLayoutRelation = .Equal, attribute attr2: NSLayoutAttribute? = nil, multiplier: CGFloat = 1, constant c: CGFloat = 0) {
         let attribute2: NSLayoutAttribute = view2 == nil ? .NotAnAttribute : (attr2 ?? attr1)
-        XCTAssertEqual(firstItem as? UIView, view1 as? UIView)
+        XCTAssertTrue(firstItem === view1)
         XCTAssertEqual(firstAttribute, attr1)
         XCTAssertEqual(self.relation, relation)
-        XCTAssertEqual(secondItem as? UIView, view2 as? UIView)
+        XCTAssertTrue(secondItem === view2)
         XCTAssertEqual(secondAttribute, attribute2)
         XCTAssertEqual(self.multiplier, multiplier)
         XCTAssertEqual(constant, c)
