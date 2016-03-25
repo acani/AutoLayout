@@ -24,7 +24,7 @@ Usage:
 
     ```swift
     let insets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
-    let constraints = NSLayoutConstraint.constraintsWithSuperview(contentView, subview: textField, insets: insets)
+    let constraints = NSLayoutConstraint.constraintsWithSubview(textField, subview: contentView, insets: insets)
     NSLayoutConstraint.activateConstraints(constraints)
     ```
 

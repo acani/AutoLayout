@@ -6,12 +6,12 @@ extension NSLayoutConstraint {
         self.init(item: item1, attribute: attribute1, relatedBy: relation, toItem: item2, attribute: attribute, multiplier: multiplier, constant: constant)
     }
 
-    public class func constraintsWithSuperview(superview: UIView, subview: UIView, insets: UIEdgeInsets, localized: Bool = true) -> [NSLayoutConstraint] {
+    public class func constraintsWithSubview(subview: UIView, superview: UIView, insets: UIEdgeInsets, localized: Bool = true) -> [NSLayoutConstraint] {
         return [
-            NSLayoutConstraint(item: superview, attribute: .Top, item: subview, constant: insets.top),
-            NSLayoutConstraint(item: superview, attribute: (localized ? .Leading : .Left), item: subview, constant: -insets.left),
-            NSLayoutConstraint(item: superview, attribute: .Bottom, item: subview, constant: insets.bottom),
-            NSLayoutConstraint(item: superview, attribute: (localized ? .Trailing : .Right), item: subview, constant: insets.right)
+            NSLayoutConstraint(item: subview, attribute: .Top, item: superview, constant: insets.top),
+            NSLayoutConstraint(item: subview, attribute: (localized ? .Leading : .Left), item: superview, constant: insets.left),
+            NSLayoutConstraint(item: subview, attribute: .Bottom, item: superview, constant: -insets.bottom),
+            NSLayoutConstraint(item: subview, attribute: (localized ? .Trailing : .Right), item: superview, constant: -insets.right)
         ]
     }
 }
